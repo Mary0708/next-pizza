@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import React from "react";
 
 interface Props {
@@ -13,22 +14,26 @@ const cats = [
   "Кофе",
   "Напитки",
   "Десерты",
-  "Десерты",
 ];
 const activeIndex = 0;
 
-export default function Categories({ className }: Props): JSX.Element {
+export function Categories({ className }: Props): JSX.Element {
   return (
     <div
       className={cn("inline-flex gap-1 bg-gray-50 p-1 rounded-2xl", className)}
     >
-      {cats.map((cat, index) => (
-        <a
-          key={index}
-          className={cn("flex items-center font-bold h-11 rounded-2xl px-5")}
+      {cats.map((name, i) => (
+        <Link
+          href=""
+          key={i}
+          className={cn(
+            "flex items-center font-bold h-11 rounded-2xl px-5",
+            activeIndex === i &&
+              "bg-white shadow-md shadow-gray-200 text-primary"
+          )}
         >
-          <button></button>
-        </a>
+          {name}
+        </Link>
       ))}
     </div>
   );
