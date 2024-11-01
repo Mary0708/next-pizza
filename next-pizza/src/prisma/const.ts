@@ -1,13 +1,22 @@
 export const categories = [
-  { name: "Пиццы" },
-  { name: "Завтрак" },
-  { name: "Комбо" },
-  { name: "Закуски" },
-  { name: "Напитки" },
-  { name: "Десерты" },
+  {
+    name: "Пиццы",
+  },
+  {
+    name: "Завтрак",
+  },
+  {
+    name: "Закуски",
+  },
+  {
+    name: "Коктейли",
+  },
+  {
+    name: "Напитки",
+  },
 ];
 
-export const ingredients = [
+export const _ingredients = [
   {
     name: "Сырный бортик",
     price: 179,
@@ -43,12 +52,6 @@ export const ingredients = [
     price: 59,
     imageUrl:
       "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A22FA54A81411E9AFA67259A324",
-  },
-  {
-    name: "Бекон",
-    price: 79,
-    imageUrl:
-      "https://cdn.dodostatic.net/static/Img/Ingredients/000D3A39D824A82E11E9AFA637AAB68F",
   },
   {
     name: "Ветчина",

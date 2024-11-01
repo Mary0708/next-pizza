@@ -1,6 +1,6 @@
 import { hashSync } from "bcrypt";
 import { prisma } from "./prisma-client";
-import { categories, ingredients, products } from "./const";
+import { categories, _ingredients, products } from "./const";
 import { Prisma } from "@prisma/client";
 
 const randomNumber = (min: number, max: number) => {
@@ -50,7 +50,7 @@ async function up() {
     data: categories,
   });
   await prisma.ingredient.createMany({
-    data: ingredients,
+    data: _ingredients,
   });
   await prisma.product.createMany({
     data: products,
@@ -59,10 +59,10 @@ async function up() {
   const pizza1 = await prisma.product.create({
     data: {
       name: "Пепперони фреш",
-      imageUrl: "./images/pepe.webp",
+      imageUrl: "/images/pepe.png",
       categoryId: 1,
       ingredients: {
-        connect: ingredients.slice(0, 5),
+        connect: _ingredients.slice(0, 5),
       },
     },
   });
@@ -70,10 +70,10 @@ async function up() {
   const pizza2 = await prisma.product.create({
     data: {
       name: "Сырная",
-      imageUrl: "./images/syr.webp",
+      imageUrl: "/images/cheese.png",
       categoryId: 1,
       ingredients: {
-        connect: ingredients.slice(5, 10),
+        connect: _ingredients.slice(5, 10),
       },
     },
   });
@@ -81,10 +81,10 @@ async function up() {
   const pizza3 = await prisma.product.create({
     data: {
       name: "Чоризо фреш",
-      imageUrl: "./images/chorizo.webp",
+      imageUrl: "/images/chorizo.png",
       categoryId: 1,
       ingredients: {
-        connect: ingredients.slice(10, 40),
+        connect: _ingredients.slice(10, 40),
       },
     },
   });
