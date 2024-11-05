@@ -31,7 +31,7 @@ export function ChooseProductModal({ product, className }: Props): JSX.Element {
             imageUrl={product.imageUrl}
             name={product.name}
             ingredients={product.ingredients}
-            items={[]}
+            items={product.productItems}
           />
         ) : (
           <ChooseProductForm imageUrl={product.imageUrl} name={product.name} />

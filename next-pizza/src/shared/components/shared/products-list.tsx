@@ -44,7 +44,7 @@ export function ProductsList({
             id={item.id}
             name={item.name}
             imageUrl={item.imageUrl}
-            price={item.price}
+            price={item.productItems[0].price}
           />
         ))}
       </div>
